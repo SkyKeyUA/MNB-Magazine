@@ -1,0 +1,32 @@
+:root {
+	/* fonts */
+	--main-font-family: "Montserrat", sans-serif;
+	--second-font-family: "Open Sans", sans-serif;
+
+	/* colors */
+	--primary-text: #202020;
+	--primary-bg: #ffffff;
+
+	--header-box-shadow: #000000b3;
+	--header-burger-color: #273238;
+	--header-nav-text: #707070;
+	--header-actions-text: #203d68;
+	--header-actions-border: #b8b8b8;
+
+	--footer-bg: #f1f1f1;
+	--footer-border: #e1e5e8;
+
+	--posts-title: #212121;
+	--posts-img-link-bg: #213e69b3;
+	--posts-info-text: #263238;
+	--posts-info-authoed: #26323899;
+	--posts-text: #263238bf;
+	--posts-border: #eceff1;
+
+	--posts-img-link-text-hover: #ffffffb3;
+
+	--link-bg: #4992c4;
+	--link-bg-active: #26787b;
+
+	--hover-image: brightness(0) invert(38%) sepia(6%) saturate(4836%) hue-rotate(133deg) brightness(98%) contrast(81%);
+}
