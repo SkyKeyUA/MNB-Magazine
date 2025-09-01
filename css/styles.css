@@ -147,6 +147,62 @@ main {
   padding-block: 3.75rem 1.875rem; /* 30/16 */
 }
 
+.issues-hero__header {
+  background-color: var(--footer-bg);
+  padding-block: 1.25rem; /* 20/16 */
+  font-size: 2rem; /* 32/16 */
+  line-height: 1.1;
+  color: var(--posts-info-text);
+  font-weight: 700;
+}
+.issues-hero__header h1 {
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+.issues-hero__row {
+  padding-block: 3rem; /* 48/16 */
+}
+.issues-hero__row a {
+  inline-size: 100%;
+}
+@media (any-hover: hover) {
+  .issues-hero__row a:hover .issues-hero__image::before {
+    opacity: 1;
+  }
+}
+.issues-hero__image {
+  aspect-ratio: 313/372;
+  position: relative;
+}
+.issues-hero__image:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  content: "";
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  -webkit-box-shadow: inset 0 0 5rem 0 rgba(38, 50, 56, 0.5);
+  box-shadow: inset 0 0 5rem 0 rgba(38, 50, 56, 0.5);
+  opacity: 0;
+}
+.issues-hero__name {
+  overflow-wrap: anywhere;
+  font-size: 0.75rem; /* 12/16 */
+  padding-block: 0.625rem 1.625rem; /* 26/16 */
+  color: var(--posts-title);
+}
+@media (min-width: 991.98px) {
+  .issues-hero__name {
+    padding-block: 1.625rem 3.125rem; /* 50/16 */
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 500;
+    padding-inline: 0.625rem; /* 10/16 */
+  }
+}
+
 [class*="--cover"] img,
 [class*="--cover"] video {
   width: 100%;
@@ -177,20 +233,12 @@ main {
   font-weight: 700;
   line-height: 0.75; /* 75% */
   text-transform: uppercase;
-  -webkit-margin-after: 2rem;
-          margin-block-end: 2rem; /* 32/16 */
 }
 .label h2 {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   -webkit-margin-after: 0;
           margin-block-end: 0;
-}
-@media (min-width: 479.98px) {
-  .label {
-    -webkit-margin-after: 3rem;
-            margin-block-end: 3rem; /* 48/16 */
-  }
 }
 .label::after {
   content: "";
@@ -642,6 +690,16 @@ main {
     inset-block-start: 0;
     max-inline-size: 10.0625rem; /* 161/16 */
     aspect-ratio: 161/601;
+  }
+}
+.posts__label {
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem; /* 32/16 */
+}
+@media (min-width: 479.98px) {
+  .posts__label {
+    -webkit-margin-after: 3rem;
+            margin-block-end: 3rem; /* 48/16 */
   }
 }
 

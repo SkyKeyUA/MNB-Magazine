@@ -26,6 +26,12 @@
 			aspect-ratio: 161 / 601;
 		}
 	}
+	&__label {
+		margin-block-end: 2rem; /* 32/16 */
+		@media (min-width: 479.98px) {
+			margin-block-end: 3rem; /* 48/16 */
+		}
+	}
 }
 .four-columns {
 	&--one {
