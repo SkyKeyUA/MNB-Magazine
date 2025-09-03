@@ -33,15 +33,10 @@
 		}
 	}
 }
-.four-columns {
-	&--one {
-		display: grid;
-		gap: 2rem; /* 32/16 */
-		@media (min-width: 991.98px) {
-			grid-template-columns: repeat(3, 1fr);
-		}
+.post-card {
+	&--big-one {
 		> li:first-child {
-			.four-columns__body {
+			.post-card__body {
 				border-inline: 0.0625rem solid var(--posts-border);
 				border-block-end: 0.0625rem solid var(--posts-border);
 			}
@@ -49,11 +44,46 @@
 				grid-column: span 3;
 			}
 		}
-		.four-columns__picture {
+		.post-card__picture {
 			aspect-ratio: 730 / 456;
 		}
-		.four-columns__title {
+		.post-card__title {
 			font-size: 1.5rem; /* 24/16 */
+		}
+	}
+	&--grid {
+		display: grid;
+		gap: 2rem; /* 32/16 */
+	}
+	&--two {
+		@media (min-width: 767.98px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.post-card__picture {
+			aspect-ratio: 380 / 238;
+		}
+	}
+	&--three {
+		@media (min-width: 991.98px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	&--four {
+		@media (min-width: 767.98px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: 991.98px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		&.post-card--big-one {
+			> li:first-child {
+				@media (min-width: 767.98px) {
+					grid-column: span 2;
+				}
+				@media (min-width: 991.98px) {
+					grid-column: span 4;
+				}
+			}
 		}
 	}
 	article {
@@ -61,7 +91,7 @@
 		flex-direction: column;
 		block-size: 100%;
 	}
-	// .four-columns__picture
+	// .post-card__picture
 
 	&__picture {
 		position: relative;
@@ -69,7 +99,7 @@
 		display: flex;
 		align-items: flex-end;
 		@media (any-hover: hover) {
-			&:hover .four-columns__img a::before {
+			&:hover .post-card__img a::before {
 				opacity: 1;
 			}
 		}
@@ -83,7 +113,7 @@
 		}
 	}
 
-	// .four-columns__img
+	// .post-card__img
 
 	&__img {
 		position: absolute;
@@ -113,7 +143,7 @@
 		}
 	}
 
-	// .four-columns__channel
+	// .post-card__channel
 
 	&__channel {
 		color: var(--primary-bg);
@@ -141,7 +171,7 @@
 		block-size: 100%;
 	}
 
-	// .four-columns__title
+	// .post-card__title
 
 	&__title {
 		color: var(--posts-title);
@@ -160,7 +190,7 @@
 		}
 	}
 
-	// .four-columns__info
+	// .post-card__info
 
 	&__info {
 		font-size: 0.75rem; /* 12/16 */
@@ -183,7 +213,7 @@
 		}
 	}
 
-	// .four-columns__text
+	// .post-card__text
 
 	&__text {
 		font-family: var(--second-font-family);
@@ -201,7 +231,7 @@
 		}
 	}
 
-	// .four-columns__link
+	// .post-card__link
 
 	&__link {
 		color: var(--header-actions-text);

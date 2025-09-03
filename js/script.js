@@ -24,3 +24,9 @@ function documentActions(e) {
     ? html.classList.remove('menu-open')
     : null;
 }
+var swiper = new Swiper('.issue-hero__swiper', {
+  navigation: {
+    nextEl: '.issue-hero__arrow--next',
+    prevEl: '.issue-hero__arrow--prev',
+  },
+});

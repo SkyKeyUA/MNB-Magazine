@@ -1,18 +1,4 @@
 .issues-hero {
-	// .issues-hero__header
-
-	&__header {
-		background-color: var(--footer-bg);
-		padding-block: 1.25rem; /* 20/16 */
-		font-size: 2rem; /* 32/16 */
-		line-height: 1.1;
-		color: var(--posts-info-text);
-		font-weight: 700;
-		h1 {
-			margin-block-end: 0;
-		}
-	}
-
 	// .issues-hero__row
 
 	&__row {
@@ -51,6 +37,7 @@
 
 	&__name {
 		overflow-wrap: anywhere;
+		margin-block-end: 0;
 		font-size: 0.75rem; /* 12/16 */
 		padding-block: 0.625rem 1.625rem; /* 26/16 */
 		color: var(--posts-title);
@@ -62,14 +49,4 @@
 			padding-inline: 0.625rem; /* 10/16 */
 		}
 	}
-}
-.row {
-}
-.row-cols-4 {
-}
-.text-center {
-}
-.col {
-}
-.img-fluid {
 }
