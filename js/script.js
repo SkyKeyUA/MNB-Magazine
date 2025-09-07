@@ -2,11 +2,13 @@ window.addEventListener('load', windowLoad);
 const header = document.querySelector('.header');
 const html = document.documentElement;
 const bannerPosts = document.querySelector('.posts__banner');
+const viewCards = document.querySelector('.view__root');
 
 const heightHeader = (tag) => {
   tag.style.top = `${header.offsetHeight}px`;
 };
 bannerPosts && heightHeader(bannerPosts);
+viewCards && heightHeader(viewCards);
 
 function windowLoad() {
   if (992 >= window.innerWidth) {
