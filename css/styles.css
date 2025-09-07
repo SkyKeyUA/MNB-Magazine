@@ -1687,10 +1687,10 @@ main {
 }
 @media (max-width: 479.98px) {
   .menu {
-    padding-block: 10rem 2.5rem;
+    padding-block: 12.5rem 2.5rem;
   }
   .menu::after {
-    block-size: 8.75rem;
+    block-size: 11.25rem;
   }
 }
 .search-card li:not(:last-child) {
