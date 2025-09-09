@@ -1705,9 +1705,10 @@ main {
         -ms-flex-align: end;
             align-items: flex-end;
     row-gap: 2rem;
-    font-size: 2rem;
+    font-size: 1rem; /* 16/16 */
     -webkit-margin-after: 2rem;
             margin-block-end: 2rem; /* 32/16 */
+    text-transform: uppercase;
   }
 }
 @media (max-width: 479.98px) {
