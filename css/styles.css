@@ -135,6 +135,16 @@ input:focus {
   --search-icon: brightness(0) invert(18%) sepia(30%) saturate(2505%) hue-rotate(190deg) brightness(93%) contrast(87%);
 }
 
+html {
+  opacity: 0;
+  -webkit-transition: opacity 0.8s;
+  transition: opacity 0.8s;
+}
+
+html.loaded {
+  opacity: 1;
+}
+
 body {
   color: var(--primary-text);
   font-family: var(--main-font-family);

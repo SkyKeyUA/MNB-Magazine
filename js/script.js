@@ -11,20 +11,31 @@ bannerPosts && heightHeader(bannerPosts);
 viewCards && heightHeader(viewCards);
 
 function windowLoad() {
-  if (992 >= window.innerWidth) {
-    document.addEventListener('click', documentActions);
-  }
+  document.addEventListener('click', documentActions);
   html.classList.add('loaded');
 }
 function documentActions(e) {
   const targetElement = e.target;
-
-  if (targetElement.closest('.icon-menu')) {
-    html.classList.toggle('menu-open');
+  if (992 >= window.innerWidth) {
+    if (targetElement.closest('.icon-menu')) {
+      html.classList.toggle('menu-open');
+    }
+    targetElement.closest('.menu__link') && html.classList.contains('menu-open')
+      ? html.classList.remove('menu-open')
+      : null;
   }
-  targetElement.closest('.menu__link') && html.classList.contains('menu-open')
-    ? html.classList.remove('menu-open')
-    : null;
+  if (
+    !targetElement.closest('.search-board') &&
+    document.querySelector('.search-board').classList.contains('active')
+  ) {
+    const searchBoard = document.querySelector('.search-board');
+    searchBoard.classList.remove('active');
+  }
+  if (targetElement.closest('.actions__search')) {
+    const searchBoard = document.querySelector('.search-board');
+    searchBoard.classList.add('active');
+    console.log(document.querySelector('.search-board').classList.contains('active'));
+  }
 }
 var swiper = new Swiper('.issue-hero__swiper', {
   navigation: {
