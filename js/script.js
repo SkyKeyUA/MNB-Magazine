@@ -3,6 +3,7 @@ const header = document.querySelector('.header');
 const html = document.documentElement;
 const bannerPosts = document.querySelector('.posts__banner');
 const viewCards = document.querySelector('.view__root');
+const searchBoard = document.querySelector('.search-board');
 
 const heightHeader = (tag) => {
   tag.style.top = `${header.offsetHeight}px`;
@@ -25,21 +26,22 @@ function documentActions(e) {
       : null;
   }
   if (
-    !targetElement.closest('.search-board') &&
-    document.querySelector('.search-board').classList.contains('active')
+    (!targetElement.closest('.search-board') &&
+      document.querySelector('.search-board').classList.contains('active')) ||
+    targetElement.closest('.search-board__close')
   ) {
-    const searchBoard = document.querySelector('.search-board');
     searchBoard.classList.remove('active');
-  }
-  if (targetElement.closest('.actions__search')) {
-    const searchBoard = document.querySelector('.search-board');
+    console.log(document.querySelector('.search-board').classList.contains('active'));
+  } else if (targetElement.closest('.actions__search')) {
     searchBoard.classList.add('active');
     console.log(document.querySelector('.search-board').classList.contains('active'));
   }
 }
-var swiper = new Swiper('.issue-hero__swiper', {
-  navigation: {
-    nextEl: '.issue-hero__arrow--next',
-    prevEl: '.issue-hero__arrow--prev',
-  },
-});
+if (document.querySelector('.issue-hero__swiper')) {
+  var swiper = new Swiper('.issue-hero__swiper', {
+    navigation: {
+      nextEl: '.issue-hero__arrow--next',
+      prevEl: '.issue-hero__arrow--prev',
+    },
+  });
+}

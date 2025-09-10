@@ -8,7 +8,10 @@
 			column-gap: 1.5rem; /* 24/16 */
 			row-gap: 0.375rem; /* 6/16 */
 			font-weight: 500;
-			a {
+		}
+		> ul {
+			align-items: center;
+			> li > a {
 				@media (any-hover: hover) {
 					position: relative;
 					&::after {
@@ -43,6 +46,70 @@
 			}
 		}
 	}
+}
+.menu__arrow {
+	cursor: pointer;
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	gap: 0.375rem; /* 6/16 */
+	&::after {
+		content: "";
+		transform: rotate(90deg);
+		inset-inline-end: 0;
+		inline-size: 0.3125rem; /* 5/16 */
+		aspect-ratio: 82 / 150;
+		background: url("../img/icons/arrow-grey.svg") 0 0 / contain no-repeat;
+	}
+	&:hover {
+		background-color: var(--submenu-bg);
+		.submenu {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	@media (min-width: 991.98px) {
+		padding: 0.75rem; /* 12/16 */
+	}
+	@media (max-width: 991.98px) {
+		min-inline-size: 11.25rem;
+		justify-content: flex-end;
+	}
+}
+.submenu {
+	position: absolute;
+	inset-block-start: 100%;
+	min-inline-size: 11.25rem;
+	background: var(--primary-bg);
+	z-index: 50;
+	opacity: 0;
+	visibility: hidden;
+	li {
+		inline-size: 100%;
+	}
+	a {
+		padding-block: 0.75rem; /* 12/16 */
+		@media (min-width: 991.98px) {
+			padding: 0.75rem; /* 12/16 */
+		}
+		inline-size: 100%;
+		background: var(--primary-bg);
+		transition: background 0.3s;
+		&:hover {
+			background-color: var(--posts-border);
+		}
+	}
+	@media (min-width: 1349.98px) {
+		inset-inline-start: 0;
+	}
+	@media (max-width: 1349.98px) {
+		inset-inline-end: 0;
+		text-align: end;
+	}
+}
+ul .submenu {
+	gap: 0 !important;
 }
 @media (max-width: 991.98px) {
 	.menu-open body {
@@ -123,7 +190,6 @@
 		row-gap: 2rem;
 		font-size: 1rem; /* 16/16 */
 		margin-block-end: 2rem; /* 32/16 */
-		text-transform: uppercase;
 	}
 }
 @media (max-width: 479.98px) {

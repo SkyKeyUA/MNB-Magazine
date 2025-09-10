@@ -130,6 +130,8 @@ input:focus {
   --hero-staff-bg: #f5f5f5;
   --404-border: #e0e0e0;
   --search-board-bg: #292828;
+  --submenu-bg: #ffffffe6;
+  --submenu-box-shadow: #00000033;
   --hover-image: brightness(0) invert(38%) sepia(6%) saturate(4836%) hue-rotate(133deg) brightness(98%) contrast(81%);
   --hover-swiper: brightness(0) invert(24%) sepia(36%) saturate(456%) hue-rotate(176deg) brightness(93%) contrast(91%);
   --search-icon: brightness(0) invert(18%) sepia(30%) saturate(2505%) hue-rotate(190deg) brightness(93%) contrast(87%);
@@ -1590,11 +1592,16 @@ main {
   row-gap: 0.375rem; /* 6/16 */
   font-weight: 500;
 }
+.header__menu > ul {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 @media (any-hover: hover) {
-  .header__menu ul a {
+  .header__menu > ul > li > a {
     position: relative;
   }
-  .header__menu ul a::after {
+  .header__menu > ul > li > a::after {
     content: "";
     position: absolute;
     inset-block-end: -0.125rem;
@@ -1605,7 +1612,7 @@ main {
     -webkit-transition: inline-size 0.3s ease;
     transition: inline-size 0.3s ease;
   }
-  .header__menu ul a:hover::after {
+  .header__menu > ul > li > a:hover::after {
     inline-size: 100%;
   }
 }
@@ -1622,6 +1629,91 @@ main {
   background: var(--header-nav-text);
   -webkit-transition: inline-size 0.3s ease;
   transition: inline-size 0.3s ease;
+}
+
+.menu__arrow {
+  cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.375rem; /* 6/16 */
+}
+.menu__arrow::after {
+  content: "";
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  inset-inline-end: 0;
+  inline-size: 0.3125rem; /* 5/16 */
+  aspect-ratio: 82/150;
+  background: url("../img/icons/arrow-grey.svg") 0 0/contain no-repeat;
+}
+.menu__arrow:hover {
+  background-color: var(--submenu-bg);
+}
+.menu__arrow:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+}
+@media (min-width: 991.98px) {
+  .menu__arrow {
+    padding: 0.75rem; /* 12/16 */
+  }
+}
+@media (max-width: 991.98px) {
+  .menu__arrow {
+    min-inline-size: 11.25rem;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.submenu {
+  position: absolute;
+  inset-block-start: 100%;
+  min-inline-size: 11.25rem;
+  background: var(--primary-bg);
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+}
+.submenu li {
+  inline-size: 100%;
+}
+.submenu a {
+  padding-block: 0.75rem; /* 12/16 */
+  inline-size: 100%;
+  background: var(--primary-bg);
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+@media (min-width: 991.98px) {
+  .submenu a {
+    padding: 0.75rem; /* 12/16 */
+  }
+}
+.submenu a:hover {
+  background-color: var(--posts-border);
+}
+@media (min-width: 1349.98px) {
+  .submenu {
+    inset-inline-start: 0;
+  }
+}
+@media (max-width: 1349.98px) {
+  .submenu {
+    inset-inline-end: 0;
+    text-align: end;
+  }
+}
+
+ul .submenu {
+  gap: 0 !important;
 }
 
 @media (max-width: 991.98px) {
@@ -1720,7 +1812,6 @@ main {
     font-size: 1rem; /* 16/16 */
     -webkit-margin-after: 2rem;
             margin-block-end: 2rem; /* 32/16 */
-    text-transform: uppercase;
   }
 }
 @media (max-width: 479.98px) {
@@ -1825,36 +1916,23 @@ main {
     padding-block: 1.3125rem;
   }
 }
-.search-board__logo {
-  inline-size: 11.25rem;
-}
-.search-board__logo a {
-  inline-size: 100%;
-}
-@media (max-width: 479.98px) {
-  .search-board__logo {
-    display: none;
-  }
-}
 .search-board.active {
   -webkit-transform: translate(0, 0%);
       -ms-transform: translate(0, 0%);
           transform: translate(0, 0%);
 }
-@media (min-width: 479.98px) {
-  .search-board__container {
-    display: grid;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    grid-template-columns: auto 1fr;
-    -webkit-column-gap: 2rem;
-       -moz-column-gap: 2rem;
-            column-gap: 2rem; /* 32/16 */
-  }
+.search-board__container {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-template-columns: 1fr auto;
+  -webkit-column-gap: 2rem;
+     -moz-column-gap: 2rem;
+          column-gap: 2rem; /* 32/16 */
 }
 @media (min-width: 767.98px) {
   .search-board__container {
@@ -1894,6 +1972,50 @@ main {
   border-bottom: 0.0625rem solid var(--primary-bg);
   background: transparent;
   inline-size: 100%;
+}
+.search-board__close {
+  justify-self: end;
+  position: relative;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 1.875rem;
+      flex-basis: 1.875rem;
+  inline-size: 1.875rem;
+  block-size: 1.875rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.search-board__close::before, .search-board__close::after {
+  content: "";
+  block-size: 0.25rem;
+  inline-size: 100%;
+  background-color: var(--primary-bg);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.search-board__close::before {
+  -webkit-transform: rotate(-45deg) translateY(0.1875rem);
+      -ms-transform: rotate(-45deg) translateY(0.1875rem);
+          transform: rotate(-45deg) translateY(0.1875rem);
+}
+.search-board__close::after {
+  -webkit-transform: rotate(45deg) translateY(-0.1875rem);
+      -ms-transform: rotate(45deg) translateY(-0.1875rem);
+          transform: rotate(45deg) translateY(-0.1875rem);
 }
 
 .posts--padding-block {
