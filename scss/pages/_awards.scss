@@ -1,0 +1,37 @@
+.awards-hero {
+	padding-block: 1.875rem; /* 30/16 */
+	@media (min-width: 767.98px) {
+		padding-block: 2.5rem; /* 40/16 */
+	}
+	@media (min-width: 991.98px) {
+		padding-block: 3.125rem; /* 50/16 */
+	}
+	// .awards-hero__container
+
+	&__container {
+	}
+
+	// .awards-hero__text
+
+	&__text {
+		font-family: var(--second-font-family);
+		line-height: 1.5;
+		margin-block-end: 1rem; /* 16/16 */
+		p:not(:last-child) {
+			margin-block-end: 1rem; /* 16/16 */
+		}
+	}
+
+	// .awards-hero__image
+
+	&__image {
+		max-inline-size: 62.5rem; /* 1000/16 */
+		aspect-ratio: 1000 / 300;
+		margin-block-end: 1.875rem; /* 30/16 */
+	}
+
+	// .awards-hero__image--contain
+
+	&__image--contain {
+	}
+}

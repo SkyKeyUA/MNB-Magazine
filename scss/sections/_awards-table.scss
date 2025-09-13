@@ -1,0 +1,23 @@
+.awards-table {
+	font-family: var(--second-font-family);
+	line-height: 1.5;
+	overflow-x: auto;
+	max-inline-size: 100%;
+	table {
+		min-inline-size: 37.5rem; /* 600/16 */
+	}
+	th {
+		background: var(--footer-bg);
+		font-weight: 700;
+	}
+	th,
+	td {
+		padding: 0.1875rem; /* 3/16 */
+	}
+	table tbody tr:nth-child(even) {
+		background: var(--footer-bg);
+	}
+	a {
+		color: var(--header-actions-text);
+	}
+}
