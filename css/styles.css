@@ -1027,6 +1027,35 @@ main {
   -webkit-margin-after: 0;
           margin-block-end: 0;
 }
+.awards-hero {
+  padding-block: 1.875rem; /* 30/16 */
+}
+@media (min-width: 767.98px) {
+  .awards-hero {
+    padding-block: 2.5rem; /* 40/16 */
+  }
+}
+@media (min-width: 991.98px) {
+  .awards-hero {
+    padding-block: 3.125rem; /* 50/16 */
+  }
+}
+.awards-hero__text {
+  font-family: var(--second-font-family);
+  line-height: 1.5;
+  -webkit-margin-after: 1rem;
+          margin-block-end: 1rem; /* 16/16 */
+}
+.awards-hero__text p:not(:last-child) {
+  -webkit-margin-after: 1rem;
+          margin-block-end: 1rem; /* 16/16 */
+}
+.awards-hero__image {
+  max-inline-size: 62.5rem; /* 1000/16 */
+  aspect-ratio: 1000/300;
+  -webkit-margin-after: 1.875rem;
+          margin-block-end: 1.875rem; /* 30/16 */
+}
 [class*="--cover"] img,
 [class*="--cover"] video {
   width: 100%;
@@ -2529,6 +2558,30 @@ ul .submenu {
   font-family: var(--second-font-family);
   font-weight: 700;
   line-height: 1.5; /* 150% */
+}
+
+.awards-table {
+  font-family: var(--second-font-family);
+  line-height: 1.5;
+  overflow-x: auto;
+  max-inline-size: 100%;
+}
+.awards-table table {
+  min-inline-size: 37.5rem; /* 600/16 */
+}
+.awards-table th {
+  background: var(--footer-bg);
+  font-weight: 700;
+}
+.awards-table th,
+.awards-table td {
+  padding: 0.1875rem; /* 3/16 */
+}
+.awards-table table tbody tr:nth-child(even) {
+  background: var(--footer-bg);
+}
+.awards-table a {
+  color: var(--header-actions-text);
 }
 
 .header {
