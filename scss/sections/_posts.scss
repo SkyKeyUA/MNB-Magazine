@@ -34,21 +34,14 @@
 		}
 	}
 	&__picture {
-		@media (min-width: 991.98px) {
-			justify-self: center;
-		}
-		@media (max-width: 991.98px) {
-			display: none;
-		}
+		justify-self: center;
 	}
 	&__banner {
-		@media (min-width: 991.98px) {
 			position: sticky;
 			inset-inline-start: 50%;
 			inset-block-start: 0;
 			max-inline-size: 10.0625rem; /* 161/16 */
 			aspect-ratio: 161 / 601;
-		}
 	}
 	&__label {
 		margin-block-end: 2rem; /* 32/16 */

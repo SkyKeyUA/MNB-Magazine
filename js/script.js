@@ -6,7 +6,7 @@ const viewCards = document.querySelector('.view__root');
 const searchBoard = document.querySelector('.search-board');
 
 const heightHeader = (tag) => {
-  tag.style.top = `${header.offsetHeight}px`;
+  if (header) tag.style.top = `${header.offsetHeight}px`;
 };
 bannerPosts && heightHeader(bannerPosts);
 viewCards && heightHeader(viewCards);
@@ -31,10 +31,8 @@ function documentActions(e) {
     targetElement.closest('.search-board__close')
   ) {
     searchBoard.classList.remove('active');
-    console.log(document.querySelector('.search-board').classList.contains('active'));
   } else if (targetElement.closest('.actions__search')) {
     searchBoard.classList.add('active');
-    console.log(document.querySelector('.search-board').classList.contains('active'));
   }
 }
 if (document.querySelector('.issue-hero__swiper')) {

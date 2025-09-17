@@ -49,6 +49,10 @@
 	&--margin-end {
 		margin-block-end: 3rem; /* 48/16 */
 	}
+	&--max-width {
+		max-inline-size: 90rem;
+		margin-inline: auto;
+	}
 }
 .breadcrumb {
 	color: var(--breadcrumb-item);
