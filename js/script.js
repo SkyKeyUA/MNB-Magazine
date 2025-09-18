@@ -43,3 +43,20 @@ if (document.querySelector('.issue-hero__swiper')) {
     },
   });
 }
+
+if (document.querySelector('.advertise-swiper')) {
+  var swiper = new Swiper('.advertise-swiper', {
+    slidesPerView: 'auto',
+    speed: 700,
+    spaceBetween: 16,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    breakpoints: {
+      1440: { spaceBetween: 134 },
+    },
+  });
+}
